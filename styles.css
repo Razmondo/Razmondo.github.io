@@ -15,7 +15,7 @@ html, body { min-height: 100%; }
 body {
   margin: 0;
   min-height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
   background:
     radial-gradient(circle at 50% 45%, rgba(141,255,114,.08), transparent 34%),
     linear-gradient(180deg, #08140d 0%, var(--bg-deep) 100%);
@@ -122,7 +122,7 @@ body::before {
   z-index: 2;
   align-self: center;
   width: min(100%, 1280px);
-  padding: 7vh 0 8vh;
+  padding: 5vh 0 6vh;
 }
 
 .overline {
@@ -159,7 +159,7 @@ h1 span {
   align-items: center;
   gap: 16px;
   width: min(760px, 88vw);
-  margin-top: clamp(35px, 6vh, 72px);
+  margin-top: clamp(28px, 4vh, 52px);
 }
 
 .frequency-line span {
@@ -193,10 +193,50 @@ h1 span {
   animation: blink 1.05s steps(1) infinite;
 }
 
+.coverage {
+  position: relative;
+  z-index: 3;
+  width: min(100%, 980px);
+  margin-top: 26px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.coverage-label {
+  margin: 0 0 12px;
+  color: var(--green);
+  font-size: clamp(.66rem, 1.15vw, .78rem);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.coverage-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+}
+
+.coverage-list span {
+  display: inline-block;
+  padding: 6px 9px 5px;
+  border: 1px solid rgba(141,255,114,.16);
+  background: rgba(141,255,114,.025);
+  color: var(--green-dim);
+  font-size: clamp(.62rem, 1vw, .74rem);
+  line-height: 1.25;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.coverage-list span:last-child {
+  color: var(--green-soft);
+  border-style: dashed;
+}
+
 .signal-field {
   position: absolute;
   right: 0;
-  top: 50%;
+  top: 44%;
   width: min(42vw, 520px);
   aspect-ratio: 1;
   transform: translateY(-50%);
@@ -249,10 +289,13 @@ h1 span {
   .landing { padding-inline: 18px; }
   .topbar, .footerline { letter-spacing: .07em; }
   .top-links { gap: 10px; }
-  .top-status { color: var(--green); }
-  .hero { padding: 10vh 0; }
+  .top-status { display: none; }
+  .hero { padding: 8vh 0 7vh; }
   .signal-field { width: 76vw; right: -33vw; opacity: .13; }
   h1 { font-size: clamp(3.25rem, 17vw, 6rem); line-height: .86; }
+  .coverage { margin-top: 22px; }
+  .coverage-list { gap: 7px; }
+  .coverage-list span { padding: 5px 7px 4px; }
   .footerline span:last-child { display: none; }
 }
 
