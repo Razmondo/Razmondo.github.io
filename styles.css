@@ -86,6 +86,22 @@ body::before {
 
 .brand-mark span { color: var(--green); }
 
+.top-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.top-links a {
+  color: var(--green-dim);
+  text-decoration: none;
+}
+
+.top-links a:hover,
+.top-links a:focus-visible {
+  color: var(--green);
+}
+
 .top-status {
   display: flex;
   align-items: center;
@@ -232,6 +248,7 @@ h1 span {
 @media (max-width: 720px) {
   .landing { padding-inline: 18px; }
   .topbar, .footerline { letter-spacing: .07em; }
+  .top-links { gap: 10px; }
   .top-status { color: var(--green); }
   .hero { padding: 10vh 0; }
   .signal-field { width: 76vw; right: -33vw; opacity: .13; }
